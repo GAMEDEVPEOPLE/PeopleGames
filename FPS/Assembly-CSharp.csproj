@@ -61,11 +61,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\FPSInput.cs" />
-    <Compile Include="Assets\HelloWorld.cs" />
-    <Compile Include="Assets\MouseLook.cs" />
-    <Compile Include="Assets\Shoot.cs" />
-    <Compile Include="Assets\Spin.cs" />
+    <Compile Include="Assets\Scripts\FPSInput.cs" />
+    <Compile Include="Assets\Scripts\HelloWorld.cs" />
+    <Compile Include="Assets\Scripts\MouseLook.cs" />
+    <Compile Include="Assets\Scripts\Shoot.cs" />
+    <Compile Include="Assets\Scripts\Spin.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>/Users/aleksej/Desktop/PeopleGames/FPS/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
