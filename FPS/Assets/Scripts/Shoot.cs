@@ -27,6 +27,16 @@ public class Shoot : MonoBehaviour {
             {    //луч заполняет информацией переменную
                 Debug.Log("Hit " + hit.point);//загружаем координаты точки, в которую луч попал
                 StartCoroutine(SphereIndicator(hit.point));//Запуск сопрограммы в ответ на попадание
+                GameObject hitObject = hit.transform.gameObject;//Получаем объект, в который попал луч
+                ReactiveTarget target = hitObject.GetComponent<ReactiveTarget>();
+                if (target != null)
+                { //проверяем у этого объекта компонента ReactiveTarget
+                    target.ReactToHit();
+                }
+                else
+                {
+                    StartCoroutine(SphereIndicator(hit.point));
+                }
             }
         }
     }
@@ -38,7 +48,6 @@ public class Shoot : MonoBehaviour {
         yield return new WaitForSeconds(1);//слово yield указывает когда остановиться
         Destroy(sphere);//удаляем gameObject
     }
-
     //Кто посмотрел данный скрипт напишите мне в личку: "I know Ray."
     void OnGUI()
     {
