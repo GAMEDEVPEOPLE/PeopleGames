@@ -9,6 +9,10 @@ public class WanderingAI : MonoBehaviour {
     public float obstacleRange = 5.0f;
 
     private bool _alive;//логическая переменная для слежения
+
+    public GameObject fireballPrefab;//будем хранить префаб
+    private GameObject _fireball; 
+
     // Use this for initialization
     void Start()
     {
@@ -26,7 +30,17 @@ public class WanderingAI : MonoBehaviour {
             if (Physics.SphereCast(ray, 0.75f, out hit))
             {//бросаем луч с описанной окружностью
                 GameObject hitObject = hit.transform.gameObject;
-                 if (hit.distance < obstacleRange)
+                if (hitObject.GetComponent<PlayerCharacter>())
+                {//распознаем игрока, так же как и мишень RayShooter
+                    if (_fireball == null)
+                    { //пустой игровой объект
+                        _fireball = Instantiate(fireballPrefab) as GameObject;//тот же метод как в SceneController
+                        //поместим огненый шар перед врагом и нацелим в направлении его движения
+                        _fireball.transform.position = transform.TransformPoint(Vector3.forward * 1.5f);
+                        _fireball.transform.rotation = transform.rotation;
+                    }
+                }
+                else if (hit.distance < obstacleRange)
                 {
                     float angle = Random.Range(-110, 110);//Поворот с наполовину случайным значение
                     transform.Rotate(0, angle, 0);
