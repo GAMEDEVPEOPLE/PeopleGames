@@ -27,6 +27,16 @@ public class Shoot : MonoBehaviour {
             {    //луч заполняет информацией переменную
                 Debug.Log("Hit " + hit.point);//загружаем координаты точки, в которую луч попал
                 StartCoroutine(SphereIndicator(hit.point));//Запуск сопрограммы в ответ на попадание
+                GameObject hitOnject = hit.transform.gameObject;//Получаем объект, в который попал луч
+                ReactiveTarget target = hitOnject.GetComponent<ReactiveTarget>();
+                if (target != null)
+                { //проверяем у этого объекта компонента ReactiveTarget
+                    target.ReactToHit();
+                }
+                else
+                {
+                    StartCoroutine(SphereIndicator(hit.point));
+                }
             }
         }
     }
