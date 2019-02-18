@@ -8,11 +8,10 @@ public class WanderingAI : MonoBehaviour {
 
     public float obstacleRange = 5.0f;
 
-    private bool _alive;//логическая переменная для слежения
-
     public GameObject fireballPrefab;//будем хранить префаб
-    private GameObject _fireball; 
+    private GameObject _fireball;
 
+    private bool _alive;//логическая переменная для слежения
     // Use this for initialization
     void Start()
     {
