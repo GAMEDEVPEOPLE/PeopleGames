@@ -1,8 +1,9 @@
 ﻿<Properties StartupConfiguration="{6CC92EE2-C97E-2137-C111-F092707B90B5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DoorOpenDevice.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BackAndForth.cs">
     <Files>
       <File FileName="Assets/Scripts/PlayerCharacter.cs" Line="8" Column="25" />
       <File FileName="Assets/Scripts/DoorOpenDevice.cs" Line="23" Column="6" />
+      <File FileName="Assets/Scripts/BackAndForth.cs" Line="26" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

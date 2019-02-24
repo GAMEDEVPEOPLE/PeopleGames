@@ -12,4 +12,13 @@ public class Fireball : MonoBehaviour {
         transform.Translate(0, 0, speed * Time.deltaTime);
     }
 
+    void OnTriggerEnter(Collider other)
+    {//вызывается когда с триггером сталкивается другой объект
+        PlayerCharacter player = other.GetComponent<PlayerCharacter>();
+        if (player != null)
+        {//проверяем, является ли объект PlayerCharacter
+            player.Hurt(damage); 
+        }
+        Destroy(this.gameObject);
+    }
 }
