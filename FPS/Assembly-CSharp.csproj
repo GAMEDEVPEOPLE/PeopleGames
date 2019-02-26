@@ -61,8 +61,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CollectibleItem.cs" />
     <Compile Include="Assets\Scripts\BackAndForth.cs" />
     <Compile Include="Assets\Scripts\DeviceOperator.cs" />
+    <Compile Include="Assets\Scripts\DeviceTrigger.cs" />
     <Compile Include="Assets\Scripts\DoorOpenDevice.cs" />
     <Compile Include="Assets\Scripts\Fireball.cs" />
     <Compile Include="Assets\Scripts\FPSInput.cs" />
