@@ -61,8 +61,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CollectibleItem.cs" />
+    <Compile Include="Assets\ButtonScript.cs" />
     <Compile Include="Assets\Scripts\BackAndForth.cs" />
+    <Compile Include="Assets\Scripts\CollectibleItem.cs" />
     <Compile Include="Assets\Scripts\DeviceOperator.cs" />
     <Compile Include="Assets\Scripts\DeviceTrigger.cs" />
     <Compile Include="Assets\Scripts\DoorOpenDevice.cs" />
