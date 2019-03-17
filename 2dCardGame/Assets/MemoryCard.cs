@@ -20,9 +20,16 @@ public class MemoryCard : MonoBehaviour {
 
     public void OnMouseDown()
     {
-        if (cardBack.activeSelf)//запускаем код деактивации
+        if (cardBack.activeSelf && controller.canReveal)//запускаем код деактивации
         {
             cardBack.SetActive(false); //Делаем объект видимым/невидимым
+            controller.CardRevealed(this);// Уведомление контроллера при открытии этой карты.
         }
     }
+
+    public void Unreveal()
+    { //позволяет вернуть открытую карты на место
+        cardBack.SetActive(true);
+    }
+
 }
