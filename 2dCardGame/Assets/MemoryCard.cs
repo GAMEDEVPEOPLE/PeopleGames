@@ -14,8 +14,8 @@ public class MemoryCard : MonoBehaviour {
 
     public void SetCard(int id, Sprite image)//метод для передачи указанному объекту новых спрайтов
     {
-
-
+        _id = id;
+        GetComponent<SpriteRenderer>().sprite = image;
     }
 
     public void OnMouseDown()

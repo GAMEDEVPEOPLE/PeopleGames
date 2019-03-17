@@ -5,14 +5,19 @@ using UnityEngine;
 
 public class SceneController : MonoBehaviour {
 
-   
-    void Start () {
 
-       
-	}
+    [SerializeField] private MemoryCard originalCard;//ссылка для карты в сцене
+    [SerializeField] private Sprite[] images;//массив ссылок на ресурсы-спрайты
+
+    void Start()
+    {
+        int id = Random.Range(0, images.Length);
+        originalCard.SetCard(id, images[id]);//вызов открытого метода в MemoryCard
+    }
 
 
-    void Update() {
+    void Update() 
+    {
 
     }
 
