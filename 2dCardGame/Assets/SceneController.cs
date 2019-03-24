@@ -10,6 +10,9 @@ public class SceneController : MonoBehaviour {
     public const float offsetX = 2f;
     public const float offsetY = 2.5f;
 
+    private int _score = 0;
+    public TextMesh scoreLabel;
+
 
     [SerializeField] private MemoryCard originalCard;//ссылка для карты в сцене
     [SerializeField] private Sprite[] images;//массив ссылок на ресурсы-спрайты
@@ -31,10 +34,30 @@ public class SceneController : MonoBehaviour {
         else
         {
             _secondRevealed = card;
+
+            StartCoroutine(CheckMatch()); //Вызывает сопрограмму, после двух карт
+
             Debug.Log("Match? " + (_firstRevealed.id == _secondRevealed.id)); //сравнение 2-х карт
         }
     }
 
+    private IEnumerator CheckMatch()
+    {
+        if (_firstRevealed.id == _secondRevealed.id)
+        {
+            _score++; // Увеличиваем счет на единицу, если идентификаторы открытых карт совпадают.
+            Debug.Log("Score: " + _score);
+            scoreLabel.text = "Score:" + _score;//отображаем текст.
+        }
+        else
+        {
+            yield return new WaitForSeconds(.5f);
+            _firstRevealed.Unreveal(); // Закрытие несовпадающих карт.
+            _secondRevealed.Unreveal();
+        }
+        _firstRevealed = null; // Очистка переменных вне зависимости от того, было ли совпадение.
+        _secondRevealed = null;
+    }
 
     void Start()
     {
